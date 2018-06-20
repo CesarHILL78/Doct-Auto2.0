@@ -1,0 +1,38 @@
+<!-- <div *ngFor="let modele of modeles">
+  <a>
+    <p (click)="showMoteur(modele.id)">{{modele.$nom}}</p>
+  </a>
+  <div *ngFor="let moteur of moteurs">
+    <a>
+      <p (click)="showAnnee(modele.id,moteur.id)">{{moteur.$nom}}</p>
+    </a>
+
+  </div>
+  <div *ngFor="let annee of annees">
+    <p>{{annee.$nom}}</p>
+  </div>
+</div> -->
+
+<section class="listings">
+  <div class="wrapper">
+    <ul class="properties_list">
+      <li *ngFor="let modele of modeles">
+        <!-- <a href="#">
+          <img src="img/property_1.jpg" alt="" title="" class="property_img" />
+        </a> -->
+        <a (click)="showMoteur(modele.id)">
+          <span class="price">{{modele.$nom}} </span>
+        </a>
+        <div *ngIf="modele.isActive" class="property_details">
+          <h1 *ngFor="let moteur of moteurs">
+            <a (click)="showAnnee(modele.id,moteur.id)">{{moteur.$nom}}</a>
+            <div *ngIf="moteur.isActive">
+              <h2 *ngFor="let annee of annees">{{annee.$nom}}
+                <button (click)="AfficherTout()">Afficher les défauts</button>
+              </h2>
+            </div>
+          </h1>
+        </div>
+      </li>
+    </ul>
+    <br/>
