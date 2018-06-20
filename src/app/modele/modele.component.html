@@ -1,13 +1,13 @@
 
 
-<section class="listings">
+<!-- <section class="listings">
   <div class="wrapper">
     <ul class="properties_list">
-      <li *ngFor="let modele of modeles">
+      <li *ngFor="let modele of modeles"> -->
         <!-- <a href="#">
           <img src="img/property_1.jpg" alt="" title="" class="property_img" />
         </a> -->
-        <a  (click)="showMoteur(modele.id)">
+       <!--  <a  (click)="showMoteur(modele.id)">
           <span class="price">{{modele.$nom}} </span>
         </a>
         <div *ngIf="modele.isActive" class="property_details">
@@ -24,4 +24,37 @@
     </ul>
     <br/>
   </div>
-</section>
+</section> -->
+
+
+<section class="listings">
+    <div class="wrapper">
+      <ul class="properties_list">
+        <li *ngFor="let modele of modeles">
+          <!-- <a href="#">
+            <img src="img/property_1.jpg" alt="" title="" class="property_img" />
+          </a> -->
+          <a (click)="showMoteur(modele.id)">
+            <span class="price">{{modele.$nom}} </span>
+          </a>
+          <div *ngIf="modele.isActive" class="property_details">
+            <h1 *ngFor="let moteur of moteurs">
+                <a (click)="showAnnee(modele.id,moteur.id)">
+                    <span class="price">{{moteur.$nom}} </span>
+                  </a>
+                  <div *ngIf="moteur.isActive" class="property_details">
+                    <h1>
+                      <a *ngFor="let annee of annees" >{{annee.$nom}}</a>
+                      <button >Afficher les défauts</button>
+                    </h1>
+                  </div>
+            </h1>
+            
+            <!-- <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>-->
+          </div>
+        </li>
+      </ul>
+      <br/>
+      
+    </div>
+  </section>
