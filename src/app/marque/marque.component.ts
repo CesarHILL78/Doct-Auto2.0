@@ -10,7 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-marque',
   templateUrl: './marque.component.html',
-  styleUrls: ['./marque.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 export class MarqueComponent  implements OnInit {
   /**

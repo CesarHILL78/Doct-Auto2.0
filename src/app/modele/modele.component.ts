@@ -15,7 +15,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 @Component({
   selector: 'app-modele',
   templateUrl: './modele.component.html',
-  styleUrls: ['../marque/marque.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 export class ModeleComponent implements OnInit {
 
@@ -83,7 +83,11 @@ private annees : Annee[]=[];
   }
  
 showMoteur(id: number){
+
   let index= this.getIndex(this.modeles,id);
+  this.modeles.forEach(element => {
+    element.$isActive=false;
+  });
   this.modeles[index].$isActive=true;
  
   this.apiService.idModele = id;
@@ -97,13 +101,17 @@ showMoteur(id: number){
 showAnnee(idModele: number,idMoteur:number){
   
   let index= this.getIndex(this.moteurs,idMoteur);
-  this.moteurs[index].$isActive=true;
+  this.moteurs.forEach(element => {
+    element.$isActive=false;
+  });
+ 
   this.apiService.idModele = idModele;
   this.apiService.idMoteur=idMoteur;
   this.apiService.getListeAnnee().subscribe(res=> {
     this.annees = res; 
     
   })
+  this.moteurs[index].$isActive=true;
   this.isAnnee=true
 }
 

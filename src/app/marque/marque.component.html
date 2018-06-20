@@ -1,4 +1,3 @@
-
 <section class="listings">
   <div class="wrapper">
     <ul class="properties_list">
@@ -6,7 +5,9 @@
         <!-- <a href="#">
           <img src="img/property_1.jpg" alt="" title="" class="property_img" />
         </a> -->
-        <a routerLink="modele" (click)="GetId(marque.id)"><span class="price">{{marque.$nom}} </span></a>
+        <a routerLink="modele" (click)="GetId(marque.id)">
+          <span class="price">{{marque.$nom}} </span>
+        </a>
         <div class="property_details">
           <h1>
             <a href="#"></a>
@@ -14,6 +15,8 @@
           <!-- <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>-->
         </div>
       </li>
-      </ul>
+    </ul>
     <br/>
-<button (click)="AfficherTout()">Afficher tout</button>
+    <button (click)="AfficherTout()">Afficher tout</button>
+  </div>
+</section>

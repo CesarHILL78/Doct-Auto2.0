@@ -17,11 +17,6 @@ export class ApiService {
     idModele : number;
     idMoteur : number;
     
-
-   
-
-   
-  
     constructor(private http: Http) { }
 
 
@@ -49,7 +44,7 @@ export class ApiService {
                     
                 );
               });
-            }));
+            })); 
 }
 
 getListeMoteur(): Observable<Moteur[]>{
@@ -65,7 +60,7 @@ getListeMoteur(): Observable<Moteur[]>{
 }
 
 getListeAnnee(): Observable<Annee[]>{
-    console.log("getListeAnnee()");
+   
     let apiURL = "http://www.n4naki.fr/u139863db1.php?action=get_voiture_by_annee&id1="+this.idModele.toString()+"&id2=" + this.idMoteur.toString();
     return this.http.get(apiURL).pipe(map(res => {
         return res.json().map(annee => {

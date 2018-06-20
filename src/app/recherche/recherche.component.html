@@ -30,59 +30,13 @@
       </form>
     </div>
   </div>
-  <!--  end advanced search section  -->
+
 </section>
-<!--  end search section  -->
-
-<!-- <div id=recherche>
-
-  <select class=form-control style="width:50%" id="marque" (change)="selectionMarque()">
-    <option value=defaut>Choisir une marque</option>
-    <option *ngFor="let marque of marques">{{marque.name}}</option>
-
-  </select>
-
-  <select class=form-control id="modele" style="width:50%" *ngIf="isMarqueSelected !=''" (change)="selectionModele()">
-    <option value=defaut>Choisir un modèle</option>
-    <option *ngFor="let modele of modeles">{{modele.name}}</option>
-
-  </select>
-
-  <select class=form-control id="annee" style="width:50%" *ngIf="isModeleSelected !=''" (change)="selectionAnnee()">
-    <option value=defaut>Choisir une année</option>
-    <option *ngFor="let annee of annees">{{annee.an}}</option>
-
-  </select>
-
-  <div class="table-responsive" id="tableau">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Marque</th>
-          <th>Modele</th>
-          <th>Annee</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let voiture of voitures">
-          <td>{{voiture.marque}}</td>
-          <td>{{voiture.modele}}</td>
-          <td>{{voiture.annee}}</td>
-          <td>
-            <a routerLink="detail" (click)=selectionDetail(voiture.id)>Voir les défauts</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
 
 
 
-  </div>
-
-</div>
- -->
  
- <router-outlet></router-outlet>
+
 
   
         

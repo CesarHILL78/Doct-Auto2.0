@@ -1,17 +1,4 @@
-<!-- <div *ngFor="let modele of modeles">
-  <a>
-    <p (click)="showMoteur(modele.id)">{{modele.$nom}}</p>
-  </a>
-  <div *ngFor="let moteur of moteurs">
-    <a>
-      <p (click)="showAnnee(modele.id,moteur.id)">{{moteur.$nom}}</p>
-    </a>
 
-  </div>
-  <div *ngFor="let annee of annees">
-    <p>{{annee.$nom}}</p>
-  </div>
-</div> -->
 
 <section class="listings">
   <div class="wrapper">
@@ -20,7 +7,7 @@
         <!-- <a href="#">
           <img src="img/property_1.jpg" alt="" title="" class="property_img" />
         </a> -->
-        <a (click)="showMoteur(modele.id)">
+        <a  (click)="showMoteur(modele.id)">
           <span class="price">{{modele.$nom}} </span>
         </a>
         <div *ngIf="modele.isActive" class="property_details">
@@ -36,3 +23,5 @@
       </li>
     </ul>
     <br/>
+  </div>
+</section>
