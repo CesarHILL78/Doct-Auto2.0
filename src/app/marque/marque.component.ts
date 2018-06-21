@@ -54,6 +54,7 @@ AfficherTout(){
 
 GetId(id:number){
   this.apiService.idMarque=id;
+  navigator.vibrate(200);
 }
 
 }

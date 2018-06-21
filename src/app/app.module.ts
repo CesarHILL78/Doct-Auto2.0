@@ -10,7 +10,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { MarqueComponent } from './marque/marque.component';
 import { CommonModule } from '@angular/common';
 import { ModeleComponent } from './modele/modele.component';
-import {WebcamModule} from 'ngx-webcam';
 import { environment } from '../environments/environment';
 
 
@@ -34,7 +33,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule,
     CommonModule,
-    WebcamModule
     
   ],
   providers: [

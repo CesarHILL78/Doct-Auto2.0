@@ -103,9 +103,12 @@ export class ModeleComponent implements OnInit {
 
   showMoteur(id: number) {
 
+        navigator.vibrate(500);
+
     let index = this.getIndex(this.modeles, id);
     this.modeles.forEach(element => {
       element.$isActive = false;
+
     });
    
 
