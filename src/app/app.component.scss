@@ -59,14 +59,14 @@ body{
 }
 
 h1, h2, h3, h4, h5 ,h6{
-    color: #626262;
+    color: grey;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
 }
 
 h1              { font-size: 2em; margin: .67em 0 }
 h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
+h3              { font-size: 1.17em; margin: .83em 0; color:gray; }
 h5              { font-size: .83em; margin: 1.5em 0 }
 h6              { font-size: .75em; margin: 1.67em 0 }
 h1, h2, h3, h4,
@@ -211,7 +211,7 @@ header nav .login_btn:hover{
 }
 
 .hero .caption h3{
-    color: #fff;
+    color: grey;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 14px;
     margin: -15px 0 0 25px;
@@ -707,6 +707,11 @@ footer .copyrights a.ph_link{
         padding: 0 40px;
         max-width: 1020px;
     }
+
+    .logo{
+        display:none;
+    }
+
     .search .advanced_search .arrow{
         top: -8px;
         right: 46px;
