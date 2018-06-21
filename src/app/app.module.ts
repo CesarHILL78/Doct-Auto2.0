@@ -11,6 +11,8 @@ import { MarqueComponent } from './marque/marque.component';
 import { CommonModule } from '@angular/common';
 import { ModeleComponent } from './modele/modele.component';
 
+import { environment } from '../environments/environment';
+
 
 const appRoutes: Routes = [
   { path: 'modele', component: ModeleComponent },
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    CommonModule
+    CommonModule,
+    
   ],
   providers: [
     ApiService,
