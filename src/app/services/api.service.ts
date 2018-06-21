@@ -9,6 +9,7 @@ import { Modele } from "../model/modele.model";
 import { enableProdMode } from '@angular/core';
 import { Moteur } from "../model/moteur.model";
 import { Annee } from "../model/annee.model";
+import { Element } from "../model/element.model";
 
 @Injectable()
 export class ApiService {
@@ -16,6 +17,8 @@ export class ApiService {
     idMarque: number;
     idModele : number;
     idMoteur : number;
+    idVoiture : number;
+    
     
     constructor(private http: Http) { }
 
@@ -64,8 +67,8 @@ getListeAnnee(): Observable<Annee[]>{
     let apiURL = "http://www.n4naki.fr/u139863db1.php?action=get_voiture_by_annee&id1="+this.idModele.toString()+"&id2=" + this.idMoteur.toString();
     return this.http.get(apiURL).pipe(map(res => {
         return res.json().map(annee => {
-            console.log("getListeAnnee"+annee);
-            return new Annee( annee.annee);
+           
+            return new Annee( annee.annee,annee.id_voiture);
             
           
         
@@ -73,4 +76,32 @@ getListeAnnee(): Observable<Annee[]>{
     }));
 
 }
+getListeElement(): Observable<Element[]>{
+   
+    let apiURL = "http://www.n4naki.fr/u139863db1.php?action=get_voiture_element&id=" + this.idVoiture.toString();
+    return this.http.get(apiURL).pipe(map(res => {
+        console.log("res"+res)
+        return res.json().map(element => {
+            console.log("element" +element)
+            return new Element( element.nom_element,element.id_element);
+      });
+    }));
+
+}
+
+getDefaut(idElement : number): Observable<string>{
+   
+    let apiURL = "http://www.n4naki.fr/u139863db1.php?action=get_voiture_defaut&id1="+this.idVoiture.toString()+"&id2=" + idElement.toString();
+    return this.http.get(apiURL).pipe(map(res => {
+        return res.json().map(defaut => {
+           
+            return ( defaut.nom_defaut);
+            
+          
+        
+      });
+    }));
+
+}
+
 }
