@@ -1,13 +1,11 @@
-
-
 <!-- <section class="listings">
   <div class="wrapper">
     <ul class="properties_list">
       <li *ngFor="let modele of modeles"> -->
-        <!-- <a href="#">
+<!-- <a href="#">
           <img src="img/property_1.jpg" alt="" title="" class="property_img" />
         </a> -->
-       <!--  <a  (click)="showMoteur(modele.id)">
+<!--  <a  (click)="showMoteur(modele.id)">
           <span class="price">{{modele.$nom}} </span>
         </a>
         <div *ngIf="modele.isActive" class="property_details">
@@ -59,40 +57,40 @@
     </div>
   </section> -->
 
-  <section class="listings">
-    <div class="wrapper">
-      <ul class="properties_list">
-        <li *ngFor="let modele of modeles">
-          <!-- <a href="#">
+<section >
+  <div>
+    <ul >
+      <li *ngFor="let modele of modeles">
+        <!-- <a href="#">
             <img src="img/property_1.jpg" alt="" title="" class="property_img" />
           </a> -->
-          <a (click)="showMoteur(modele.id)">
-            <span >{{modele.$nom}} </span>
-          </a>
-          <div *ngIf="modele.isActive">
-            <h1 *ngFor="let moteur of moteurs">
-                <a (click)="showAnnee(modele.id,moteur.id)">
-                    <span >{{moteur.$nom}} </span>
-                  </a>
-                  <div *ngIf="moteur.isActive" >
-                    <h1 *ngFor="let annee of annees">
-                      <a  >{{annee.$id}}</a>
-                      <button (click)="showElement(annee.$idVoiture,annee.$id)" >Afficher les défauts</button>
-                      <div *ngIf="annee.isActive" >
-                        <h1 *ngFor="let element of elements">
-                          <a  >{{element.$nom}} {{element.$defaut}} </a>
-                          
-                        </h1>
-                      </div>
-                    </h1>
-                  </div>
-            </h1>
-            
-            <!-- <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>-->
-          </div>
-        </li>
-      </ul>
-      <br/>
-      
-    </div>
-  </section>
+        <a (click)="showMoteur(modele.id)">
+          <h1>{{modele.$nom}} </h1>
+        </a>
+        <div *ngIf="modele.isActive">
+          <li *ngFor="let moteur of moteurs">
+            <a (click)="showAnnee(modele.id,moteur.id)">
+              <h2>{{moteur.$nom}} </h2>
+            </a>
+            <div *ngIf="moteur.isActive">
+              <li *ngFor="let annee of annees">
+                <h3>{{annee.$id}}</h3>
+                <button (click)="showElement(annee.$idVoiture,annee.$id)">Afficher les défauts</button>
+                <div *ngIf="annee.isActive">
+                  <li *ngFor="let element of elements">
+                    <p>{{element.$nom}} {{element.$defaut}} </p>
+
+                  </li>
+                </div>
+              </li>
+            </div>
+          </li>
+        
+          <!-- <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>-->
+        </div>
+      </li>
+    </ul>
+    <br/>
+
+  </div>
+</section>

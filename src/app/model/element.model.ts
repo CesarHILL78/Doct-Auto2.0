@@ -1,7 +1,7 @@
 export class Element{
    
     constructor(
-        private nom :string="",private id : number = null){}
+        private nom :string="Pas de défaut",private id : number = null){}
     
 
 private defaut : string = "";

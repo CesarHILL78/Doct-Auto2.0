@@ -107,11 +107,12 @@ export class ModeleComponent implements OnInit {
     this.modeles.forEach(element => {
       element.$isActive = false;
     });
-    this.modeles[index].$isActive = true;
+   
 
     this.apiService.idModele = id;
     this.apiService.getListeMoteur().subscribe(res => {
       this.moteurs = res;
+      this.modeles[index].$isActive = true;
 
     })
     this.isMoteur = true
@@ -128,9 +129,10 @@ export class ModeleComponent implements OnInit {
     this.apiService.idMoteur = idMoteur;
     this.apiService.getListeAnnee().subscribe(res => {
       this.annees = res;
+      this.moteurs[index].$isActive = true;
 
     })
-    this.moteurs[index].$isActive = true;
+    
     this.isAnnee = true
   }
 
@@ -151,7 +153,7 @@ export class ModeleComponent implements OnInit {
     this.annees.forEach(element => {
       element.$isActive = false;
     });
-    this.$annees[index].$isActive = true;
+   
     this.apiService.idVoiture = idvoiture;
 
     this.apiService.getListeElement().subscribe(res => {
@@ -159,6 +161,7 @@ export class ModeleComponent implements OnInit {
       res.forEach(element => {
         this.apiService.getDefaut(element.$id).subscribe(res => {
           element.$defaut = res;
+          this.$annees[index].$isActive = true;
 
         });
 
