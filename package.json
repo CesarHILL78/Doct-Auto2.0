@@ -24,6 +24,9 @@
     "@angular/service-worker": "^6.0.2",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "ng-camera": "^1.0.0",
+    "ng2-webcam": "^1.2.4",
+    "ngx-webcam": "^0.1.6",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.26"

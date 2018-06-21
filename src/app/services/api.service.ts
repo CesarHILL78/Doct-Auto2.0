@@ -103,5 +103,17 @@ getDefaut(idElement : number): Observable<string>{
     }));
 
 }
+getMeteo(lat:number,lon:number): Observable<any[]>{
+   
+    let apiURL = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID=4fcb3a91904bd04021870ca8464a60d8"
+    return this.http.get(apiURL).pipe(map(res => {
+        console.log("meteo"+res)
+        return res.json()
+          
+        
+     
+    }));
+
+}
 
 }

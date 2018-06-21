@@ -28,13 +28,22 @@ export class MarqueComponent  implements OnInit {
     public set $marques(value: Marque[]) {
       this.marques = value;
     }
-    
+    position:any;
      marques: Marque[];
  constructor(private apiService:ApiService){}
   ngOnInit() {
     this.apiService.getListeMarque().subscribe(res=> {
       this.marques = res.filter(marque=> marque.$id<17); 
     })
+    navigator.geolocation.getCurrentPosition(res=> {
+      this.position = res.coords.latitude.toString();
+      this.apiService.getMeteo(res.coords.latitude,res.coords.longitude).subscribe(res=> {
+       
+        
+      })
+      
+    });
+    
   }
 
 AfficherTout(){
