@@ -12,7 +12,9 @@
       <label for="msg">Message :</label>
       <textarea id="msg" name="user_message"></textarea>
   </div>
-  
+  <div>
+     <input type="submit" class="btn btn-primary" value="Envoyer">
+  </div>
 </form>
-<button (click)="getPhoto()">Prendre une photo</button>
+<button type="button" class="btn btn-primary" (click)="getPhoto()">Prendre une photo</button>
   <webcam *ngIf="isPhoto"></webcam>  
