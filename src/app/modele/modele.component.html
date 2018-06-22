@@ -75,7 +75,7 @@
             <div *ngIf="moteur.isActive">
               <li *ngFor="let annee of annees">
                 <h3>{{annee.$id}}</h3>
-                <button (click)="showElement(annee.$idVoiture,annee.$id)">Afficher les défauts</button>
+                <button type="button" class="btn btn-secondary" (click)="showElement(annee.$idVoiture,annee.$id)">Afficher les défauts</button>
                 <div *ngIf="annee.isActive">
                   <li *ngFor="let element of elements">
                     <p>{{element.$nom}} {{element.$defaut}} </p>
